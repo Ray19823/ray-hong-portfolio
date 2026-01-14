@@ -1,34 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-  <!-- Basic -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
   <title>Ray Hong | Junior Software Developer</title>
-  <meta name="description" content="Ray Hong — Junior Software Developer in Singapore. Portfolio featuring backend APIs, databases, and full-stack projects. View projects, skills, and download CV." />
-  <meta name="robots" content="index,follow" />
-  <meta name="author" content="Ray Hong" />
 
-  <!-- Canonical (update if you change repo name) -->
+  <!-- SEO -->
+  <meta name="description" content="Ray Hong — Junior Software Developer. Portfolio featuring projects, skills, and experience in backend development, databases, and full-stack applications." />
+  <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://ray19823.github.io/ray-hong-portfolio/" />
 
-  <!-- Open Graph -->
+  <!-- Social preview -->
   <meta property="og:title" content="Ray Hong | Junior Software Developer" />
-  <meta property="og:description" content="Portfolio featuring backend APIs, databases, and full-stack projects. View projects and download CV." />
+  <meta property="og:description" content="Projects, skills, and experience in backend development, databases, and full-stack applications." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://ray19823.github.io/ray-hong-portfolio/" />
-  <!-- Optional later: add og:image once you have a real screenshot file -->
+  <!-- If you later add an image file, uncomment and set it -->
   <!-- <meta property="og:image" content="https://ray19823.github.io/ray-hong-portfolio/og-image.png" /> -->
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Ray Hong | Junior Software Developer" />
-  <meta name="twitter:description" content="Portfolio featuring backend APIs, databases, and full-stack projects. View projects and download CV." />
-  <!-- Optional later: add twitter:image once you have a real screenshot file -->
-  <!-- <meta name="twitter:image" content="https://ray19823.github.io/ray-hong-portfolio/og-image.png" /> -->
-
-  <!-- Theme color (mobile browser bar) -->
   <meta name="theme-color" content="#0f172a" />
 
   <link rel="stylesheet" href="style.css"/>
@@ -51,30 +40,25 @@
 <body>
   <!-- Sticky top nav -->
   <header class="topbar">
-  <div class="container nav-wrap">
-    <a class="brand" href="#top">
-      <span class="brand-mark">RH</span>
-    </a>
+    <div class="container nav-wrap">
+      <a class="brand" href="#top" aria-label="Go to top">
+        <span class="brand-mark">RH</span>
+      </a>
 
-    <nav class="nav">
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#experience">Experience</a>
-      <a href="#contact">Contact</a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
 
-      <!-- Dark mode toggle -->
-      <button
-        id="themeToggle"
-        class="theme-toggle"
-        type="button"
-        aria-label="Toggle dark mode"
-        title="Toggle dark mode"
-      >
-        🌙
-      </button>
-    </nav>
-  </div>
-</header>
+        <!-- Dark mode toggle (VISIBLE + working) -->
+        <button class="theme-toggle" type="button" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <span class="theme-icon" id="themeIcon" aria-hidden="true">🌙</span>
+          <span class="theme-text">Theme</span>
+        </button>
+      </nav>
+    </div>
+  </header>
 
   <main id="top">
     <!-- HERO -->
@@ -86,13 +70,14 @@
           <p class="subtitle">Junior Software Developer</p>
 
           <p class="lead">
-            Transitioning from IT support to software engineering with strong foundations
-            in backend development, databases, and full-stack applications.
-            Diploma in Full-Stack Development (Ngee Ann Polytechnic).
+            Transitioning from IT support to software engineering with strong foundations in backend development,
+            databases, and full-stack applications. Diploma in Full-Stack Development (Ngee Ann Polytechnic).
           </p>
 
           <div class="cta-row">
             <a class="btn btn-primary" href="#projects">View Projects</a>
+
+            <!-- CV in same folder as index.html -->
             <a class="btn btn-secondary" href="./RayHong-CV.pdf" download>Download CV</a>
           </div>
 
@@ -103,51 +88,11 @@
           </div>
         </div>
 
-        <!-- HERO TECH ILLUSTRATION (inline SVG) -->
         <div class="hero-art" aria-hidden="true">
-          <div class="art-card art-svg">
-            <svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tech illustration">
-              <defs>
-                <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
-                  <stop offset="0" stop-color="currentColor" stop-opacity="0.22"/>
-                  <stop offset="1" stop-color="currentColor" stop-opacity="0.06"/>
-                </linearGradient>
-                <linearGradient id="g2" x1="1" x2="0" y1="0" y2="1">
-                  <stop offset="0" stop-color="currentColor" stop-opacity="0.26"/>
-                  <stop offset="1" stop-color="currentColor" stop-opacity="0.05"/>
-                </linearGradient>
-              </defs>
-
-              <!-- background panels -->
-              <rect x="40" y="50" width="820" height="500" rx="28" fill="url(#g1)"/>
-              <rect x="80" y="90" width="740" height="420" rx="22" fill="url(#g2)"/>
-
-              <!-- fake "code window" -->
-              <rect x="120" y="140" width="520" height="320" rx="18" fill="none" stroke="currentColor" stroke-opacity="0.25" stroke-width="2"/>
-              <circle cx="150" cy="170" r="6" fill="currentColor" opacity="0.35"/>
-              <circle cx="172" cy="170" r="6" fill="currentColor" opacity="0.25"/>
-              <circle cx="194" cy="170" r="6" fill="currentColor" opacity="0.18"/>
-
-              <!-- code lines -->
-              <g stroke="currentColor" stroke-width="10" stroke-linecap="round" opacity="0.22">
-                <line x1="150" y1="220" x2="520" y2="220"/>
-                <line x1="150" y1="260" x2="460" y2="260"/>
-                <line x1="150" y1="300" x2="540" y2="300"/>
-                <line x1="150" y1="340" x2="420" y2="340"/>
-                <line x1="150" y1="380" x2="500" y2="380"/>
-              </g>
-
-              <!-- database cylinder -->
-              <g transform="translate(640,210)" opacity="0.26">
-                <ellipse cx="90" cy="30" rx="80" ry="22" fill="currentColor"/>
-                <rect x="10" y="30" width="160" height="170" fill="currentColor"/>
-                <ellipse cx="90" cy="200" rx="80" ry="22" fill="currentColor"/>
-                <ellipse cx="90" cy="30" rx="80" ry="22" fill="#000" opacity="0.14"/>
-              </g>
-
-              <!-- accent diagonal -->
-              <path d="M860 60 L860 160 L560 460 L460 460 Z" fill="currentColor" opacity="0.10"/>
-            </svg>
+          <!-- Keep your current art. If you later add an actual hero image, we can swap this. -->
+          <div class="art-card">
+            <div class="art-overlay"></div>
+            <div class="art-diagonal"></div>
           </div>
         </div>
       </div>
@@ -162,10 +107,10 @@
         <div class="cards">
           <article class="card">
             <div class="card-accent"></div>
-            <h3>StockWatchlist (Front-End)</h3>
-            <p>Front-end project focused on UI, data presentation, and interactive features.</p>
+            <h3>StockWatchlist (Front-End Project)</h3>
+            <p>Front-end project focused on UI, data display, and interactive features.</p>
             <div class="tags">
-              <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
+              <span class="tag">HTML/CSS</span><span class="tag">JavaScript</span><span class="tag">Front-End</span>
             </div>
             <a class="card-link" href="https://github.com/Ray19823/FED_Project_StockWatchlist" target="_blank" rel="noopener">View on GitHub →</a>
           </article>
@@ -173,7 +118,7 @@
           <article class="card">
             <div class="card-accent"></div>
             <h3>Render-ready CRUD Server (Node.js)</h3>
-            <p>Backend CRUD server built with Node.js and Express, structured for deployment readiness.</p>
+            <p>Backend CRUD server project built with deployment readiness in mind (Render).</p>
             <div class="tags">
               <span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">CRUD</span>
             </div>
@@ -183,7 +128,7 @@
           <article class="card">
             <div class="card-accent"></div>
             <h3>EduConnect Backend</h3>
-            <p>Backend API for EduConnect: REST endpoints, database integration, and maintainable structure.</p>
+            <p>Backend API for EduConnect (assignment): REST endpoints, database integration, and maintainable structure.</p>
             <div class="tags">
               <span class="tag">REST</span><span class="tag">PostgreSQL</span><span class="tag">Backend</span>
             </div>
@@ -192,8 +137,8 @@
 
           <article class="card">
             <div class="card-accent"></div>
-            <h3>SSD Practicals (API & Database)</h3>
-            <p>Practical implementations covering APIs, SQL databases, and backend fundamentals.</p>
+            <h3>SSD Practicals (API + DB)</h3>
+            <p>Practical exercises and implementations covering APIs, databases, and backend fundamentals.</p>
             <div class="tags">
               <span class="tag">APIs</span><span class="tag">SQL</span><span class="tag">Backend</span>
             </div>
@@ -213,6 +158,7 @@
             <h3>Languages</h3>
             <ul class="list">
               <li>JavaScript</li>
+              <li>Python</li>
               <li>SQL</li>
               <li>C#</li>
               <li>HTML / CSS</li>
@@ -241,11 +187,11 @@
           <div class="time-item">
             <div class="dot"></div>
             <div class="time-body">
-              <h3>IT Support / Systems</h3>
+              <h3>IT Support / Systems (Career Transition)</h3>
               <p class="muted">3+ years · Singapore</p>
               <ul class="list">
                 <li>Supported users, resolved incidents, and improved operational workflows.</li>
-                <li>Developed strong troubleshooting, systems thinking, and communication skills.</li>
+                <li>Built strong fundamentals in troubleshooting, systems thinking, and communication.</li>
               </ul>
             </div>
           </div>
@@ -254,10 +200,10 @@
             <div class="dot"></div>
             <div class="time-body">
               <h3>Junior Software Developer (Target Role)</h3>
-              <p class="muted">Backend · Databases · Full-Stack</p>
+              <p class="muted">Backend APIs · Databases · Full-Stack</p>
               <ul class="list">
-                <li>Building portfolio projects and production-style APIs with clean structure.</li>
-                <li>Continuously improving code quality, documentation, and deployment workflows.</li>
+                <li>Building portfolio projects and production-style APIs with validation and clean structure.</li>
+                <li>Actively improving code quality and deployment workflow (GitHub Pages, repos, READMEs).</li>
               </ul>
             </div>
           </div>
@@ -269,7 +215,7 @@
     <section id="contact" class="section alt">
       <div class="container contact">
         <h2>Contact</h2>
-        <p class="muted">If you’re hiring or want to collaborate, feel free to reach out.</p>
+        <p class="muted">If you’re hiring or want to collaborate, reach out anytime.</p>
 
         <div class="cta-row">
           <a class="btn btn-primary" href="mailto:Lvnhong@gmail.com">Email Me</a>
@@ -282,45 +228,40 @@
   <footer class="footer">
     <div class="container footer-inner">
       <p>© <span id="year"></span> Ray Hong</p>
-
       <div class="footer-links">
         <a href="./RayHong-CV.pdf" download>Download CV</a>
+        <span aria-hidden="true">·</span>
         <a href="#top">Back to top ↑</a>
       </div>
     </div>
   </footer>
 
   <script>
-    // Year
+    // year
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Theme toggle
+    // theme toggle
     const root = document.documentElement;
     const btn = document.getElementById("themeToggle");
-    const icon = btn.querySelector(".toggle-icon");
-    const text = btn.querySelector(".toggle-text");
+    const icon = document.getElementById("themeIcon");
 
     function applyTheme(mode) {
       root.setAttribute("data-theme", mode);
-      if (mode === "dark") {
-        icon.textContent = "☀️";
-        text.textContent = "Light";
-      } else {
-        icon.textContent = "🌙";
-        text.textContent = "Dark";
-      }
+      // update icon safely
+      if (icon) icon.textContent = mode === "dark" ? "☀️" : "🌙";
     }
 
-    // Init label based on current attr
+    // initial theme already applied in <head> script; sync icon
     applyTheme(root.getAttribute("data-theme") || "light");
 
-    btn.addEventListener("click", () => {
-      const current = root.getAttribute("data-theme") || "light";
-      const next = current === "dark" ? "light" : "dark";
-      try { localStorage.setItem("theme", next); } catch (e) {}
-      applyTheme(next);
-    });
+    if (btn) {
+      btn.addEventListener("click", () => {
+        const current = root.getAttribute("data-theme") || "light";
+        const next = current === "dark" ? "light" : "dark";
+        applyTheme(next);
+        try { localStorage.setItem("theme", next); } catch (e) {}
+      });
+    }
   </script>
 </body>
-</html>       
-   
+</html>
