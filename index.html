@@ -1,28 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Basic -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
   <title>Ray Hong | Junior Software Developer</title>
+  <meta name="description" content="Ray Hong — Junior Software Developer in Singapore. Portfolio featuring backend APIs, databases, and full-stack projects. View projects, skills, and download CV." />
+  <meta name="robots" content="index,follow" />
+  <meta name="author" content="Ray Hong" />
+
+  <!-- Canonical (update if you change repo name) -->
+  <link rel="canonical" href="https://ray19823.github.io/ray-hong-portfolio/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ray Hong | Junior Software Developer" />
+  <meta property="og:description" content="Portfolio featuring backend APIs, databases, and full-stack projects. View projects and download CV." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ray19823.github.io/ray-hong-portfolio/" />
+  <!-- Optional later: add og:image once you have a real screenshot file -->
+  <!-- <meta property="og:image" content="https://ray19823.github.io/ray-hong-portfolio/og-image.png" /> -->
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ray Hong | Junior Software Developer" />
+  <meta name="twitter:description" content="Portfolio featuring backend APIs, databases, and full-stack projects. View projects and download CV." />
+  <!-- Optional later: add twitter:image once you have a real screenshot file -->
+  <!-- <meta name="twitter:image" content="https://ray19823.github.io/ray-hong-portfolio/og-image.png" /> -->
+
+  <!-- Theme color (mobile browser bar) -->
+  <meta name="theme-color" content="#0f172a" />
+
   <link rel="stylesheet" href="style.css"/>
+
+  <!-- Prevent theme flash: apply saved/system theme ASAP -->
+  <script>
+    (function () {
+      try {
+        const saved = localStorage.getItem("theme"); // "dark" | "light" | null
+        const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const isDark = saved ? saved === "dark" : prefersDark;
+        document.documentElement.setAttribute("data-theme", isDark ? "dark" : "light");
+      } catch (e) {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    })();
+  </script>
 </head>
 
 <body>
   <!-- Sticky top nav -->
   <header class="topbar">
-    <div class="container nav-wrap">
-      <a class="brand" href="#top">
-        <span class="brand-mark">RH</span>
-      </a>
+  <div class="container nav-wrap">
+    <a class="brand" href="#top">
+      <span class="brand-mark">RH</span>
+    </a>
 
-      <nav class="nav">
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
+    <nav class="nav">
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+
+      <!-- Dark mode toggle -->
+      <button
+        id="themeToggle"
+        class="theme-toggle"
+        type="button"
+        aria-label="Toggle dark mode"
+        title="Toggle dark mode"
+      >
+        🌙
+      </button>
+    </nav>
+  </div>
+</header>
 
   <main id="top">
     <!-- HERO -->
@@ -41,9 +93,7 @@
 
           <div class="cta-row">
             <a class="btn btn-primary" href="#projects">View Projects</a>
-            <a class="btn btn-secondary" href="./RayHong-CV.pdf" download>
-              Download CV
-            </a>
+            <a class="btn btn-secondary" href="./RayHong-CV.pdf" download>Download CV</a>
           </div>
 
           <div class="social-row">
@@ -53,10 +103,51 @@
           </div>
         </div>
 
+        <!-- HERO TECH ILLUSTRATION (inline SVG) -->
         <div class="hero-art" aria-hidden="true">
-          <div class="art-card">
-            <div class="art-overlay"></div>
-            <div class="art-diagonal"></div>
+          <div class="art-card art-svg">
+            <svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tech illustration">
+              <defs>
+                <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0" stop-color="currentColor" stop-opacity="0.22"/>
+                  <stop offset="1" stop-color="currentColor" stop-opacity="0.06"/>
+                </linearGradient>
+                <linearGradient id="g2" x1="1" x2="0" y1="0" y2="1">
+                  <stop offset="0" stop-color="currentColor" stop-opacity="0.26"/>
+                  <stop offset="1" stop-color="currentColor" stop-opacity="0.05"/>
+                </linearGradient>
+              </defs>
+
+              <!-- background panels -->
+              <rect x="40" y="50" width="820" height="500" rx="28" fill="url(#g1)"/>
+              <rect x="80" y="90" width="740" height="420" rx="22" fill="url(#g2)"/>
+
+              <!-- fake "code window" -->
+              <rect x="120" y="140" width="520" height="320" rx="18" fill="none" stroke="currentColor" stroke-opacity="0.25" stroke-width="2"/>
+              <circle cx="150" cy="170" r="6" fill="currentColor" opacity="0.35"/>
+              <circle cx="172" cy="170" r="6" fill="currentColor" opacity="0.25"/>
+              <circle cx="194" cy="170" r="6" fill="currentColor" opacity="0.18"/>
+
+              <!-- code lines -->
+              <g stroke="currentColor" stroke-width="10" stroke-linecap="round" opacity="0.22">
+                <line x1="150" y1="220" x2="520" y2="220"/>
+                <line x1="150" y1="260" x2="460" y2="260"/>
+                <line x1="150" y1="300" x2="540" y2="300"/>
+                <line x1="150" y1="340" x2="420" y2="340"/>
+                <line x1="150" y1="380" x2="500" y2="380"/>
+              </g>
+
+              <!-- database cylinder -->
+              <g transform="translate(640,210)" opacity="0.26">
+                <ellipse cx="90" cy="30" rx="80" ry="22" fill="currentColor"/>
+                <rect x="10" y="30" width="160" height="170" fill="currentColor"/>
+                <ellipse cx="90" cy="200" rx="80" ry="22" fill="currentColor"/>
+                <ellipse cx="90" cy="30" rx="80" ry="22" fill="#000" opacity="0.14"/>
+              </g>
+
+              <!-- accent diagonal -->
+              <path d="M860 60 L860 160 L560 460 L460 460 Z" fill="currentColor" opacity="0.10"/>
+            </svg>
           </div>
         </div>
       </div>
@@ -72,65 +163,41 @@
           <article class="card">
             <div class="card-accent"></div>
             <h3>StockWatchlist (Front-End)</h3>
-            <p>
-              Front-end project focused on UI, data presentation, and interactive features.
-            </p>
+            <p>Front-end project focused on UI, data presentation, and interactive features.</p>
             <div class="tags">
-              <span class="tag">HTML</span>
-              <span class="tag">CSS</span>
-              <span class="tag">JavaScript</span>
+              <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
             </div>
-            <a class="card-link" href="https://github.com/Ray19823/FED_Project_StockWatchlist" target="_blank" rel="noopener">
-              View on GitHub →
-            </a>
+            <a class="card-link" href="https://github.com/Ray19823/FED_Project_StockWatchlist" target="_blank" rel="noopener">View on GitHub →</a>
           </article>
 
           <article class="card">
             <div class="card-accent"></div>
             <h3>Render-ready CRUD Server (Node.js)</h3>
-            <p>
-              Backend CRUD server built with Node.js and Express, structured for deployment readiness.
-            </p>
+            <p>Backend CRUD server built with Node.js and Express, structured for deployment readiness.</p>
             <div class="tags">
-              <span class="tag">Node.js</span>
-              <span class="tag">Express</span>
-              <span class="tag">CRUD</span>
+              <span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">CRUD</span>
             </div>
-            <a class="card-link" href="https://github.com/Ray19823/FED_Tutorial_Render-ready_CRUD_ServerJS" target="_blank" rel="noopener">
-              View on GitHub →
-            </a>
+            <a class="card-link" href="https://github.com/Ray19823/FED_Tutorial_Render-ready_CRUD_ServerJS" target="_blank" rel="noopener">View on GitHub →</a>
           </article>
 
           <article class="card">
             <div class="card-accent"></div>
             <h3>EduConnect Backend</h3>
-            <p>
-              Backend API for an education platform assignment, featuring REST endpoints and database integration.
-            </p>
+            <p>Backend API for EduConnect: REST endpoints, database integration, and maintainable structure.</p>
             <div class="tags">
-              <span class="tag">REST</span>
-              <span class="tag">PostgreSQL</span>
-              <span class="tag">Backend</span>
+              <span class="tag">REST</span><span class="tag">PostgreSQL</span><span class="tag">Backend</span>
             </div>
-            <a class="card-link" href="https://github.com/Ray19823/educonnect-backend" target="_blank" rel="noopener">
-              View on GitHub →
-            </a>
+            <a class="card-link" href="https://github.com/Ray19823/educonnect-backend" target="_blank" rel="noopener">View on GitHub →</a>
           </article>
 
           <article class="card">
             <div class="card-accent"></div>
             <h3>SSD Practicals (API & Database)</h3>
-            <p>
-              Practical implementations covering APIs, SQL databases, and backend fundamentals.
-            </p>
+            <p>Practical implementations covering APIs, SQL databases, and backend fundamentals.</p>
             <div class="tags">
-              <span class="tag">APIs</span>
-              <span class="tag">SQL</span>
-              <span class="tag">Backend</span>
+              <span class="tag">APIs</span><span class="tag">SQL</span><span class="tag">Backend</span>
             </div>
-            <a class="card-link" href="https://github.com/Ray19823/SSDApr2025_Practicals_AngMingTeck" target="_blank" rel="noopener">
-              View on GitHub →
-            </a>
+            <a class="card-link" href="https://github.com/Ray19823/SSDApr2025_Practicals_AngMingTeck" target="_blank" rel="noopener">View on GitHub →</a>
           </article>
         </div>
       </div>
@@ -206,9 +273,7 @@
 
         <div class="cta-row">
           <a class="btn btn-primary" href="mailto:Lvnhong@gmail.com">Email Me</a>
-          <a class="btn btn-outline" href="https://www.linkedin.com/in/ming-t-53297534b/" target="_blank" rel="noopener">
-            Message on LinkedIn
-          </a>
+          <a class="btn btn-outline" href="https://www.linkedin.com/in/ming-t-53297534b/" target="_blank" rel="noopener">Message on LinkedIn</a>
         </div>
       </div>
     </section>
@@ -217,13 +282,45 @@
   <footer class="footer">
     <div class="container footer-inner">
       <p>© <span id="year"></span> Ray Hong</p>
-      <a href="#top">Back to top ↑</a>
+
+      <div class="footer-links">
+        <a href="./RayHong-CV.pdf" download>Download CV</a>
+        <a href="#top">Back to top ↑</a>
+      </div>
     </div>
   </footer>
 
   <script>
+    // Year
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Theme toggle
+    const root = document.documentElement;
+    const btn = document.getElementById("themeToggle");
+    const icon = btn.querySelector(".toggle-icon");
+    const text = btn.querySelector(".toggle-text");
+
+    function applyTheme(mode) {
+      root.setAttribute("data-theme", mode);
+      if (mode === "dark") {
+        icon.textContent = "☀️";
+        text.textContent = "Light";
+      } else {
+        icon.textContent = "🌙";
+        text.textContent = "Dark";
+      }
+    }
+
+    // Init label based on current attr
+    applyTheme(root.getAttribute("data-theme") || "light");
+
+    btn.addEventListener("click", () => {
+      const current = root.getAttribute("data-theme") || "light";
+      const next = current === "dark" ? "light" : "dark";
+      try { localStorage.setItem("theme", next); } catch (e) {}
+      applyTheme(next);
+    });
   </script>
 </body>
-</html>
-
+</html>       
+   
