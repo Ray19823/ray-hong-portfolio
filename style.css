@@ -555,3 +555,11 @@ button:focus-visible {
   * { transition: none !important; scroll-behavior: auto; }
 }
 
+/* ---------- Private repo label ---------- */
+.card-link.private {
+  display: inline-block;
+  font-weight: 600;
+  color: var(--muted);
+  cursor: default;
+}
+
