@@ -3,31 +3,59 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
   <title>Ray Hong | Junior Software Developer</title>
 
-  <!-- SEO -->
-  <meta name="description" content="Ray Hong — Junior Software Developer. Portfolio featuring projects, skills, and experience in backend development, databases, and full-stack applications." />
-  <meta name="robots" content="index,follow" />
+  <!-- ✅ SEO Meta Description -->
+  <meta
+    name="description"
+    content="Ray Hong — Junior Software Developer transitioning from IT support to software engineering. Focused on backend APIs, databases, MVC, and full-stack projects. View my portfolio and download my CV."
+  />
+
+  <!-- ✅ Canonical URL (helps SEO avoid duplicate URL issues) -->
   <link rel="canonical" href="https://ray19823.github.io/ray-hong-portfolio/" />
 
-  <!-- Social preview -->
-  <meta property="og:title" content="Ray Hong | Junior Software Developer" />
-  <meta property="og:description" content="Projects, skills, and experience in backend development, databases, and full-stack applications." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://ray19823.github.io/ray-hong-portfolio/" />
-  <!-- If you later add an image file, uncomment and set it -->
-  <!-- <meta property="og:image" content="https://ray19823.github.io/ray-hong-portfolio/og-image.png" /> -->
-
+  <!-- Theme color for mobile browser UI -->
   <meta name="theme-color" content="#0f172a" />
+
+  <!-- ✅ Open Graph (OG) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Ray Hong | Junior Software Developer" />
+  <meta
+    property="og:description"
+    content="Portfolio of backend APIs, databases, MVC, and full-stack projects. View GitHub repos and download my CV."
+  />
+  <meta property="og:url" content="https://ray19823.github.io/ray-hong-portfolio/" />
+
+  <!-- ✅ OG Image (placeholder now; you can add later) -->
+  <!-- Later, create /og-image.png in the same folder and it will work automatically -->
+  <meta property="og:image" content="https://ray19823.github.io/ray-hong-portfolio/og-image.png" />
+  <meta property="og:image:alt" content="Ray Hong Portfolio preview image" />
+
+  <!-- ✅ Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ray Hong | Junior Software Developer" />
+  <meta
+    name="twitter:description"
+    content="Portfolio of backend APIs, databases, MVC, and full-stack projects. View GitHub repos and download my CV."
+  />
+  <meta name="twitter:image" content="https://ray19823.github.io/ray-hong-portfolio/og-image.png" />
+
+  <!-- Optional favicon placeholders (add files later if you want) -->
+  <!-- <link rel="icon" href="./favicon.ico" /> -->
+  <!-- <link rel="apple-touch-icon" href="./apple-touch-icon.png" /> -->
 
   <link rel="stylesheet" href="style.css"/>
 
-  <!-- Prevent theme flash: apply saved/system theme ASAP -->
+  <!-- ✅ Prevent theme flash: apply saved/system theme ASAP -->
   <script>
     (function () {
       try {
         const saved = localStorage.getItem("theme"); // "dark" | "light" | null
-        const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const prefersDark =
+          window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches;
+
         const isDark = saved ? saved === "dark" : prefersDark;
         document.documentElement.setAttribute("data-theme", isDark ? "dark" : "light");
       } catch (e) {
@@ -41,7 +69,7 @@
   <!-- Sticky top nav -->
   <header class="topbar">
     <div class="container nav-wrap">
-      <a class="brand" href="#top" aria-label="Go to top">
+      <a class="brand" href="#top" aria-label="Back to top">
         <span class="brand-mark">RH</span>
       </a>
 
@@ -50,13 +78,19 @@
         <a href="#skills">Skills</a>
         <a href="#experience">Experience</a>
         <a href="#contact">Contact</a>
-
-        <!-- Dark mode toggle (VISIBLE + working) -->
-        <button class="theme-toggle" type="button" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">
-          <span class="theme-icon" id="themeIcon" aria-hidden="true">🌙</span>
-          <span class="theme-text">Theme</span>
-        </button>
       </nav>
+
+      <!-- Theme toggle -->
+      <button
+        class="theme-toggle"
+        type="button"
+        id="themeToggle"
+        aria-label="Toggle theme"
+        title="Toggle theme"
+      >
+        <span class="toggle-icon" id="themeIcon" aria-hidden="true">🌙</span>
+        <span class="toggle-text" id="themeText">Theme</span>
+      </button>
     </div>
   </header>
 
@@ -77,7 +111,7 @@
           <div class="cta-row">
             <a class="btn btn-primary" href="#projects">View Projects</a>
 
-            <!-- CV in same folder as index.html -->
+            <!-- ✅ Your CV PDF is in the SAME folder as index.html -->
             <a class="btn btn-secondary" href="./RayHong-CV.pdf" download>Download CV</a>
           </div>
 
@@ -88,11 +122,67 @@
           </div>
         </div>
 
+        <!-- Hero illustration (inline SVG) -->
         <div class="hero-art" aria-hidden="true">
-          <!-- Keep your current art. If you later add an actual hero image, we can swap this. -->
-          <div class="art-card">
-            <div class="art-overlay"></div>
-            <div class="art-diagonal"></div>
+          <div class="hero-illustration">
+            <svg viewBox="0 0 920 520" role="presentation" aria-hidden="true">
+              <defs>
+                <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0" stop-color="currentColor" stop-opacity="0.10"/>
+                  <stop offset="1" stop-color="currentColor" stop-opacity="0.02"/>
+                </linearGradient>
+                <linearGradient id="g2" x1="0" x2="1" y1="0" y2="0">
+                  <stop offset="0" stop-color="#0d9488" stop-opacity="0.55"/>
+                  <stop offset="1" stop-color="#22c55e" stop-opacity="0.35"/>
+                </linearGradient>
+                <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur stdDeviation="10" result="b"/>
+                  <feColorMatrix
+                    in="b"
+                    type="matrix"
+                    values="1 0 0 0 0
+                            0 1 0 0 0
+                            0 0 1 0 0
+                            0 0 0 0.35 0"
+                    result="s"
+                  />
+                  <feMerge>
+                    <feMergeNode in="s" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+              </defs>
+
+              <rect x="26" y="28" width="868" height="464" rx="26" fill="url(#g1)" />
+              <rect x="56" y="70" width="520" height="320" rx="18" fill="none" stroke="currentColor" stroke-opacity="0.14" />
+
+              <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-opacity="0.30">
+                <path d="M92 120H350" stroke-width="10"/>
+                <path d="M92 160H460" stroke-width="10" stroke-opacity="0.24"/>
+                <path d="M92 200H410" stroke-width="10" stroke-opacity="0.22"/>
+                <path d="M92 240H300" stroke-width="10" stroke-opacity="0.20"/>
+                <path d="M92 280H480" stroke-width="10" stroke-opacity="0.22"/>
+                <path d="M92 320H360" stroke-width="10" stroke-opacity="0.20"/>
+              </g>
+
+              <g filter="url(#soft)">
+                <ellipse cx="720" cy="210" rx="110" ry="30" fill="url(#g2)"/>
+                <path d="M610 210v160c0 18 49 34 110 34s110-16 110-34V210"
+                      fill="url(#g2)" opacity="0.35"/>
+                <ellipse cx="720" cy="370" rx="110" ry="30" fill="url(#g2)" opacity="0.45"/>
+                <ellipse cx="720" cy="210" rx="110" ry="30" fill="none" stroke="currentColor" stroke-opacity="0.18"/>
+                <ellipse cx="720" cy="370" rx="110" ry="30" fill="none" stroke="currentColor" stroke-opacity="0.12"/>
+              </g>
+
+              <path d="M530 50L900 50L900 140L660 140Z" fill="url(#g2)" opacity="0.22"/>
+              <path d="M520 70L850 70" stroke="currentColor" stroke-opacity="0.10" stroke-width="12" stroke-linecap="round"/>
+
+              <g>
+                <circle cx="120" cy="92" r="8" fill="currentColor" fill-opacity="0.25"/>
+                <circle cx="146" cy="92" r="8" fill="currentColor" fill-opacity="0.18"/>
+                <circle cx="172" cy="92" r="8" fill="currentColor" fill-opacity="0.12"/>
+              </g>
+            </svg>
           </div>
         </div>
       </div>
@@ -118,7 +208,7 @@
           <article class="card">
             <div class="card-accent"></div>
             <h3>Render-ready CRUD Server (Node.js)</h3>
-            <p>Backend CRUD server project built with deployment readiness in mind (Render).</p>
+            <p>Backend CRUD server built with deployment readiness in mind (Render).</p>
             <div class="tags">
               <span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">CRUD</span>
             </div>
@@ -128,9 +218,9 @@
           <article class="card">
             <div class="card-accent"></div>
             <h3>EduConnect Backend</h3>
-            <p>Backend API for EduConnect (assignment): REST endpoints, database integration, and maintainable structure.</p>
+            <p>Backend API for EduConnect: REST endpoints, database integration, and maintainable structure.</p>
             <div class="tags">
-              <span class="tag">REST</span><span class="tag">PostgreSQL</span><span class="tag">Backend</span>
+              <span class="tag">REST</span><span class="tag">PostgreSQL</span><span class="tag">MVC</span>
             </div>
             <a class="card-link" href="https://github.com/Ray19823/educonnect-backend" target="_blank" rel="noopener">View on GitHub →</a>
           </article>
@@ -138,11 +228,21 @@
           <article class="card">
             <div class="card-accent"></div>
             <h3>SSD Practicals (API + DB)</h3>
-            <p>Practical exercises and implementations covering APIs, databases, and backend fundamentals.</p>
+            <p>Practical implementations covering APIs, databases, and backend fundamentals.</p>
             <div class="tags">
-              <span class="tag">APIs</span><span class="tag">SQL</span><span class="tag">Backend</span>
+              <span class="tag">APIs</span><span class="tag">Java</span><span class="tag">Backend</span>
             </div>
             <a class="card-link" href="https://github.com/Ray19823/SSDApr2025_Practicals_AngMingTeck" target="_blank" rel="noopener">View on GitHub →</a>
+          </article>
+
+          <article class="card">
+            <div class="card-accent"></div>
+            <h3>Inflation Calculator</h3>
+            <p>Interactive app project exploring inflation calculations and financial tips.</p>
+            <div class="tags">
+              <span class="tag">JavaScript</span><span class="tag">UI</span><span class="tag">Web App</span>
+            </div>
+            <a class="card-link" href="https://github.com/Ray19823/PF_Inflation-Calculator.zip-VSCode-workspace-" target="_blank" rel="noopener">View on GitHub →</a>
           </article>
         </div>
       </div>
@@ -159,6 +259,7 @@
             <ul class="list">
               <li>JavaScript</li>
               <li>Python</li>
+              <li>SQL</li>
               <li>Java</li>
               <li>C#</li>
               <li>HTML / CSS</li>
@@ -169,7 +270,8 @@
             <h3>Backend & Tools</h3>
             <ul class="list">
               <li>Node.js, Express</li>
-              <li>REST APIs, CRUD, MVC</li>
+              <li>REST APIs, CRUD</li>
+              <li>MVC, validation, clean structure</li>
               <li>PostgreSQL, SQL Server, MySQL</li>
               <li>Git, GitHub, VS Code</li>
             </ul>
@@ -203,7 +305,7 @@
               <p class="muted">Backend APIs · Databases · Full-Stack</p>
               <ul class="list">
                 <li>Building portfolio projects and production-style APIs with validation and clean structure.</li>
-                <li>Actively improving code quality and deployment workflow (GitHub Pages, repos, READMEs).</li>
+                <li>Improving deployment workflow and documentation (GitHub Pages, repos, READMEs).</li>
               </ul>
             </div>
           </div>
@@ -228,30 +330,37 @@
   <footer class="footer">
     <div class="container footer-inner">
       <p>© <span id="year"></span> Ray Hong</p>
+
       <div class="footer-links">
         <a href="./RayHong-CV.pdf" download>Download CV</a>
-        <span aria-hidden="true">·</span>
         <a href="#top">Back to top ↑</a>
       </div>
     </div>
   </footer>
 
   <script>
-    // year
+    // Footer year
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // theme toggle
+    // Theme toggle (safe: no null errors)
     const root = document.documentElement;
     const btn = document.getElementById("themeToggle");
     const icon = document.getElementById("themeIcon");
+    const text = document.getElementById("themeText");
 
     function applyTheme(mode) {
       root.setAttribute("data-theme", mode);
-      // update icon safely
+
       if (icon) icon.textContent = mode === "dark" ? "☀️" : "🌙";
+      if (text) text.textContent = "Theme";
+
+      if (btn) {
+        btn.setAttribute("aria-label", mode === "dark" ? "Switch to light mode" : "Switch to dark mode");
+        btn.setAttribute("title", mode === "dark" ? "Switch to light mode" : "Switch to dark mode");
+      }
     }
 
-    // initial theme already applied in <head> script; sync icon
+    // Sync UI with current theme applied in <head>
     applyTheme(root.getAttribute("data-theme") || "light");
 
     if (btn) {
