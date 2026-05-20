@@ -1,4 +1,14 @@
-<!DOCTYPE html>
+  Download CV
+</a>
+
+<a class="btn btn-secondary" href="./RayHong-CV.docx" download>
+  Download CV
+</a>  Download CV
+</a>
+
+<a class="btn btn-secondary" href="./RayHong-CV.docx" download>
+  Download CV
+</a><!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
@@ -113,10 +123,11 @@
           <div class="cta-row">
             <a class="btn btn-primary" href="#projects">View Projects</a>
 
-            <a class="btn btn-secondary" href="./RayHong-CV.docx" download>
+            <!-- ✅ Your CV PDF is in the SAME folder as index.html -->
               Download CV
-            </a>
-         </div>
+</a>
+<a class="btn btn-secondary" href="./RayHong-CV.docx" download>Download CV</a>
+          </div>
 
           <div class="social-row">
             <a class="pill" href="https://github.com/Ray19823" target="_blank" rel="noopener">GitHub</a>
@@ -376,7 +387,7 @@
       <p>© <span id="year"></span> Ray Hong</p>
 
       <div class="footer-links">
-        <a href="./RayHong-CV.docx" download>Download CV</a>
+        <a href="./RayHong-CV.pdf" download>Download CV</a>
         <a href="#top">Back to top ↑</a>
       </div>
     </div>
